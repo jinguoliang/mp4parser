@@ -30,6 +30,7 @@ public class ComponsitionShiftLeastGreatestAtomTest extends TestCase {
         clsg.setLeastDisplayOffset(-4);
 
         File f = File.createTempFile("ComponsitionShiftLeastGreatestAtomTest", "");
+        f.deleteOnExit();
         FileChannel fc = new FileOutputStream(f).getChannel();
         clsg.getBox(fc);
         fc.close();

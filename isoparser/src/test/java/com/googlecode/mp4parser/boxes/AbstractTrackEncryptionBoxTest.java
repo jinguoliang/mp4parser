@@ -23,6 +23,7 @@ public abstract class AbstractTrackEncryptionBoxTest {
 
 
         File f = File.createTempFile(this.getClass().getSimpleName(), "");
+        f.deleteOnExit();
         FileChannel fc = new FileOutputStream(f).getChannel();
         tenc.getBox(fc);
         fc.close();
